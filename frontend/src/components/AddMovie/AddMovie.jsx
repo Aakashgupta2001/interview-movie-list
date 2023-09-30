@@ -27,27 +27,38 @@ function AddMovie() {
     e.preventDefault();
     axios.post("http://localhost:3001/add", data).then((data) => {
       console.log(data);
+      if (data) {
+        alert("Movie Added Successfully");
+        setData({
+          Name: "",
+          rating: "",
+          releasedDate: "",
+          ogDate: "",
+        });
+      }
     });
   };
 
   return (
     <>
       <div className="AddMovie">
-        <h1>Add Movie</h1>
         <form onSubmit={handleSubmit} className="movieForm">
-          <div>
+          <h1 className="addMovieHeading">Add Movie</h1>
+          <div className="row">
             Movie Name:
             <input type="text" onChange={(e) => onChange(e, "Name")} value={data.Name} />
           </div>
-          <div>
+          <div className="row">
             Rating:
             <input type="Number" max={5} min={0} onChange={(e) => onChange(e, "rating")} value={data.rating} />
           </div>
-          <div>
+          <div className="row">
             Released Date:
             <input type="date" onChange={(e) => onChange(e, "releasedDate")} value={data.ogDate} />
           </div>
-          <button type="submit">Submit</button>
+          <button className="submitButton" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </>

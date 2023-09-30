@@ -2,7 +2,28 @@
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 80vh;
+  height: 90vh;
   align-items: center;
   justify-content: center;
+}
+
+input {
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.row {
+  margin: 10px 15px;
+}
+
+.submitButton {
+  background-color: #282c34;
+  padding: 5px 15px;
+  color: white;
+  border-radius: 5px;
+}
+
+.addMovieHeading {
+  font-size: 3rem;
 }
